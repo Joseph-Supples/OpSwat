@@ -1,5 +1,4 @@
 import * as dotenv from 'dotenv';
-//edit path as needed to match path
 dotenv.config({path: '.env'});
 import * as path from 'path'
 import SHA256 from "crypto-js/sha256.js";
