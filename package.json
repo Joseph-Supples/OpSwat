@@ -1,0 +1,31 @@
+{
+  "name": "opswat",
+  "version": "1.0.0",
+  "description": "Opswat assesment",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joseph-Supples/OpSwat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joseph-Supples/OpSwat/issues"
+  },
+  "homepage": "https://github.com/Joseph-Supples/OpSwat#readme",
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "cryptojs": "^2.5.3",
+    "dotenv": "^16.0.1",
+    "find-config": "^1.0.0",
+    "node-fetch": "^3.2.10"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.13"
+  },
+  "keywords": []
+}
