@@ -1,6 +1,4 @@
 # Joseph Supples OpSwat MetaDefender File Hash Lookup and Upload
-Run via
-> node src/index.js
 
 ## Description
 The program looks to see if the hash calculated via CrytoJS is present in OpSwat. 
