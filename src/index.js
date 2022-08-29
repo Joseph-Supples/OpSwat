@@ -6,11 +6,13 @@ import fetch from "node-fetch";
 import fs from 'fs';
 
 const key = process.env.API_KEY;
+//if using file other than one provided, update this path reference
+const filePath = "sample.txt";
 
 
 
 function getFileHash(){
-   const content = fs.readFileSync("sample.txt");
+   const content = fs.readFileSync(filePath);
 
    return SHA256(content).toString();
 }
@@ -46,7 +48,7 @@ async function uploadFile() {
             'apikey': key,
             'Content-Type' : "application/octet-stream",
         },
-        body: "@sample.txt"
+        body: `@${filePath}`
     })
     let responsejson = await response.json();
     opFileHash = responsejson["sha256"];
