@@ -4,6 +4,7 @@ import * as path from 'path'
 import SHA256 from "crypto-js/sha256.js";
 import fetch from "node-fetch";
 import fs from 'fs';
+import { exit } from 'node:process';
 
 const key = process.env.API_KEY;
 //if using file other than one provided, update this path reference
@@ -25,6 +26,9 @@ async function lookupHash(hash) {
         headers:{
             'apikey': key
         }
+    }).catch(function(error){
+        console.error(error);
+        process.exit();
     });
     const responsejson = await response.json();
 
@@ -49,7 +53,10 @@ async function uploadFile() {
             'Content-Type' : "application/octet-stream",
         },
         body: `@${filePath}`
-    })
+    }).catch(function(error){
+        console.error(error);
+        process.exit();
+    });
     let responsejson = await response.json();
     opFileHash = responsejson["sha256"];
     return responsejson["data_id"];
@@ -64,7 +71,10 @@ async function readResults(data_id) {
             headers:{
                 'apikey': key
             }
-        })
+        }).catch(function(error){
+            console.error(error);
+            process.exit();
+        });
         var responsejson = await response.json();
         progress = responsejson["scan_results"]["progress_percentage"];
         if(progress !== 100)
